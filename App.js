@@ -5,19 +5,19 @@ import Task from './components/Task';
 
 export default function App() {
 
-  const [task, setTask] = useState();
+  const [task, setTask] = useState('');
   const [taskItems, setTaskItems] = useState([]);
 
   const handleAddTask = () => {
 
-    if (task.length < 8 || task == null) {
+    if (task.length < 8 || task === '') {
       alert("O texto deve ter pelo menos 8 caracteres.");
       return;
-    };
+    }; 
 
     Keyboard.dismiss();
     setTaskItems([...taskItems, task])
-    setTask(null);
+    setTask('');
     
   }
 
