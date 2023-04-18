@@ -9,13 +9,16 @@ export default function App() {
   const [taskItems, setTaskItems] = useState([]);
 
   const handleAddTask = () => {
-    if (task.length < 8) {
+
+    if (task.length < 8 || task == null) {
       alert("O texto deve ter pelo menos 8 caracteres.");
       return;
     };
+
     Keyboard.dismiss();
     setTaskItems([...taskItems, task])
     setTask(null);
+    
   }
 
   const completeTask = (index) => {
@@ -27,12 +30,13 @@ export default function App() {
   return (
     
     <View style={styles.container}>
-        <ScrollView contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled'>
+        
         <View style={styles.image}>
           <Image style={styles.logo} source={require('./assets/logo.png')} />
           <Text style={styles.sectionTitle}>Crie sua lista de taferas</Text>
         </View>
 
+        <ScrollView contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled'>
         <View style={styles.taskWrapper}>
             <View style={styles.items}>
               {
@@ -45,9 +49,9 @@ export default function App() {
                 })
               }
             </View>
-
         </View>
         </ScrollView>
+        
         <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? "padding" : "height"}
         style={styles.writeTaskWrapper}
@@ -73,7 +77,7 @@ const styles = StyleSheet.create({
   image: {
     alignItems: 'center',
     marginTop: 50,
-    margin: 40,
+    margin: 20,
     justifyContent: 'center',
   },
   logo: {
@@ -89,6 +93,7 @@ const styles = StyleSheet.create({
   },
   taskWrapper: {
     paddingHorizontal: 20,
+    paddingVertical: 70,
   },
   items: {
     marginTop: 15,

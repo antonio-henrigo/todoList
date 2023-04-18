@@ -1,6 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
+const handlerDone = () => {
+
+}
+
+
 const Task = (props) => {
 
     return (
@@ -23,9 +28,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         marginBottom: 20,
-        shadowColor: '#171717',
-        shadowOffset: {width: -2, height: 3},
-        shadowOpacity: 0.4,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+        elevation: 2,
     },
     itemLeft: {
         flexDirection: 'row',
