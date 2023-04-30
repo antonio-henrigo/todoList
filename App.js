@@ -33,7 +33,7 @@ export default function App() {
         
         <View style={styles.image}>
           <Image style={styles.logo} source={require('./assets/logo.png')} />
-          <Text style={styles.sectionTitle}>Crie sua lista de taferas</Text>
+          <Text style={styles.sectionTitle}>Crie sua lista de tarefas</Text>
         </View>
 
         <ScrollView contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps='handled'>
